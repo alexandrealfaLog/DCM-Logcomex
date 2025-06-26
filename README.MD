@@ -1,5 +1,5 @@
 # 📦 Database Change Management Logcomex
-<img alt="DCM" src="assets/img.png" width="300px" height="250px" style="border-radius:20px; display: block; margin: auto;" />
+<img alt="DCM" src="assets/img.png" width="300px" height="250px" style="border-radius:20px; text-align: center;" />
 Este repositório é responsável pelo versionamento, revisão e execução segura de alterações em banco de dados via scripts SQL. O objetivo é garantir rastreabilidade, controle de alterações e revisão por pares antes da execução em ambientes sensíveis (ex: produção).
 
 ---

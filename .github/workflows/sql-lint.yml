@@ -1,0 +1,23 @@
+name: SQL Validation & PR Checks
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-sql:
+    name: Validate SQL Syntax
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Instala PostgreSQL CLI
+        run: sudo apt-get install -y postgresql-client
+
+      - name: Valida sintaxe dos arquivos .sql
+        run: |
+          for file in $(find migrations -name '*.sql'); do
+            echo "Validando $file..."
+            cat "$file" | psql -X --dbname=postgres --no-password --dry-run || exit 1
+          done
